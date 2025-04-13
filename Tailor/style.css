@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+a{
+  text-decoration: none ;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("Fonts/Montserrat-VariableFont_wght.ttf");
+}
+
+.clearfix{
+  clear: both;
+}
+
+
+h1, h2 , h3 , h4 , h5 , h6{
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* ========= btn ========= */
+.btn{
+  background-color: #bc9076;
+  color: #fff;
+  padding: 30px 80px;
+  display: inline-block;
+}
+
+/* ====== nesting ========= */
+
+.header {
+
+  .header__logo{
+
+    float: left;
+    margin: 30px 0px 0px 60px;
+
+  }
+
+  .navbar{
+    float: right;
+
+    .navbar__links{
+      display: inline-block;
+
+      .navbar__item{
+        display: inline-block;
+        padding: 0px 35px;
+        font-size:15px;
+        font-weight: 600;
+
+        a{
+        color: #101A31;
+
+        }
+      }
+
+    }
+
+    .header__visit--us{
+      display: inline-block;
+      background-color: #be9278;
+      color: #fff;
+      padding: 32px 65px;
+      font-size:14px;
+      font-weight:500;
+      text-transform: uppercase;
+      margin-left: 80px;
+    }
+
+  }
+
+
+}
+
+
+.hero{
+  height: 850px;
+  background: linear-gradient(to right, rgba(16, 26, 48, 0.7) 0%, rgba(16, 26, 48, 0.7) 12%, #101a31 91%, #101a31 100%), url(images/h1_hero.png);
+  background-size: cover ;
+  background-position: center;
+  position: relative;
+
+
+  .hero__content{
+    position: absolute;
+    top: 20%;
+    left: 12%;
+    color: #fff;
+    width: 40%;
+
+    h1{
+      font-size: 76px;
+      line-height:83.6px;
+      font-weight:600;
+      margin: 25px 0px;
+    }
+    p{
+      line-height:30px;
+      width: 78%;
+      margin-bottom: 30px;
+    }
+
+
+    
+
+  }
+
+  .hero__img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 750px ;
+
+    img{
+      height: 100%;
+      width: 660px;
+    }
+  }
+
+}
+
+
+
+.offers{
+  /* background-color: lightblue; */
+  width: 80%;
+  margin: 100px auto;
+
+  .offer{
+    width: 33%;
+    display: inline-block;
+
+    .offer__img{
+      padding: 40px;
+      img{
+        width: 100%;
+      }
+    }
+
+    .offer__content{
+      padding: 0px 40px;
+      position: relative;
+
+      span{
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background-color: #c6a16e;
+        color: #fff;
+        display: inline-block;
+        text-align: center;
+        line-height: 35px ;
+        position: absolute;
+
+        top: -5px;
+        left: -15px;
+      }
+
+      h3{
+        font-size:30px;
+        font-weight:600
+
+      }
+      p{
+        line-height:30px;
+        color:#101a31;
+        margin-top: 20px;
+        width: 80%;
+      }
+    }
+  }
+}
+
+.about{
+  width: 85%;
+  margin: 50px auto 150px;
+  position: relative;
+  height: 800px;
+
+  .about__img{
+    position: absolute;
+    z-index: 3;
+    top: 15%;
+    width: 660px;
+    height: 570px;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .about__content{
+    background-color: #f2e1d9;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 75%;
+
+    .about__text{
+      position: absolute;
+      top: 20%;
+      left: 40%;
+
+      h2{
+        font-size:56px;
+        line-height:67.2px;
+        font-weight:600;
+        color:#101a31;
+        margin-bottom: 25px;
+      }
+
+      p{
+        width: 73%;
+        line-height:30.6px;
+
+      }
+
+      .paragraph-1{
+        font-size:18px;
+        color:#010a44
+
+      }
+      .paragraph-2{
+        font-size:14px;
+        color:#10285d;
+        margin: 25px 0px;
+      }
+    }
+  }
+}
+
+.footer{
+  background-color:#0e172f ;
+  color: #fff;
+  padding: 30px 0px ;
+  text-align: center;
+}
+.pattern{
+    h2{
+        text-align: center;
+        font-weight:600;
+        font-size: 53px;
+    }
+    p{
+        font-weight:500;
+        text-align:center;
+        line-height:30px;
+        font-size:18px;
+    }
+}
