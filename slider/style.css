@@ -1,0 +1,46 @@
+.slider audio{
+    text-align: center;
+    margin-top: 50px;
+}
+.slider{
+    margin-top: 20px;
+    
+
+}
+button{
+    width: 60px;
+    height: 40px;
+    cursor: pointer;
+    /*padding: 20px 40px;*/
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.sound{
+   /* position: absolute;*/
+    display: none;
+    margin-top: 40px;
+   /* width: 80%;*/
+   margin: 100px auto;
+    gap: 15px;
+    justify-content: center;
+    text-align: center;
+}
+.main {
+    display: flex;
+  }
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    color: rgb(8, 8, 8);
+    cursor: pointer;
+    padding: 10px;
+  }
+.prev {
+    left: 30px;
+  }
+.next {
+    right: 30px;
+  }
