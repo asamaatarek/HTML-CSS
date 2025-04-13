@@ -1,46 +1,87 @@
-.slider audio{
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+  }
+  
+  section.slide {
+    max-width: 600px;
+    margin: 260px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     text-align: center;
-    margin-top: 50px;
-}
-.slider{
-    margin-top: 20px;
-    
-
-}
-button{
-    width: 60px;
-    height: 40px;
-    cursor: pointer;
-    /*padding: 20px 40px;*/
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.sound{
-   /* position: absolute;*/
     display: none;
-    margin-top: 40px;
-   /* width: 80%;*/
-   margin: 100px auto;
-    gap: 15px;
-    justify-content: center;
+    .text{
     text-align: center;
-}
-.main {
-    display: flex;
+    font-size: 20px;
+    margin-bottom: 60px auto;
+    margin-top: 60px auto;
   }
-.nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 60px;
-    color: rgb(8, 8, 8);
+  }
+  section.slide.main{
+    display: block;
+  }
+  .sound {
+    margin-bottom: 20px;
+  }
+  
+  .btns.sound button {
+    background-color: #044d19;
+    color: white;
+    padding: 12px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
-    padding: 10px;
+    transition: background 0.3s ease;
   }
-.prev {
-    left: 30px;
+
+  .volume.sound,
+  .time.sound,
+  .speed.sound {
+    margin: 15px 0;
   }
-.next {
-    right: 30px;
+  
+  .volumeInp,
+  .timeInp {
+    width: 80%;
+    margin-top: 8px;
   }
+  
+  .speedSelect {
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+  }
+  .nav{
+    text-align: center;
+    margin-top: 40px;
+  }
+  .nav.prev,.nav.next {
+    font-size: 40px;
+      cursor: pointer;
+      padding: 10px 20px;
+      color: #333;
+      user-select: none;
+      transition: color 0.3s;
+      margin-top: 20px;
+      gap: 20px;
+  
+  }
+  .nav-btn{
+    background-color:  #0a0f0c;
+    color: white;
+    font-size: 15px;
+    padding: 10px 10px;
+    margin-top: 5px auto;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+    }
+  
+  
+  

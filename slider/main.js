@@ -1,17 +1,28 @@
-
-$(document).ready(function () {
+document.addEventListener("DOMContentLoaded", function () {
   const previous = document.querySelector(".prev");
   const next = document.querySelector(".next");
   const slides = document.querySelectorAll(".slide");
 
-  const volumeInp = document.getElementById("volumeInp");
-  const timeInp = document.getElementById("timeInp");
-  const speed = document.getElementById("speedSelect");
-
   let currentIndex = 0;
 
+  function getCurrentSlide() {
+    return slides[currentIndex];
+  }
+
   function getCurrentAudio() {
-    return slides[currentIndex].querySelector("audio");
+    return getCurrentSlide().querySelector("audio");
+  }
+
+  function getVolumeInp() {
+    return getCurrentSlide().querySelector(".volumeInp");
+  }
+
+  function getTimeInp() {
+    return getCurrentSlide().querySelector(".timeInp");
+  }
+
+  function getSpeedSelect() {
+    return getCurrentSlide().querySelector(".speedSelect");
   }
 
   // Basic controls
@@ -34,31 +45,72 @@ $(document).ready(function () {
     audio.muted = !audio.muted;
   };
 
-  // Volume
-  volumeInp.addEventListener("input", function () {
-    getCurrentAudio().volume = volumeInp.value;
+  // Attach button listeners to each slide
+  slides.forEach((slide, index) => {
+    const playBtn = slide.querySelector(".playBtn");
+    const pauseBtn = slide.querySelector(".pauseBtn");
+    const stopBtn = slide.querySelector(".stopBtn");
+    const muteBtn = slide.querySelector(".muteBtn");
+
+    playBtn.addEventListener("click", function () {
+      if (index === currentIndex) playAud();
+    });
+
+    pauseBtn.addEventListener("click", function () {
+      if (index === currentIndex) pauseAud();
+    });
+
+    stopBtn.addEventListener("click", function () {
+      if (index === currentIndex) stopAud();
+    });
+
+    muteBtn.addEventListener("click", function () {
+      if (index === currentIndex) muteAud();
+    });
   });
 
-  // Time scrubber
-  timeInp.addEventListener("input", function () {
-    getCurrentAudio().currentTime = timeInp.value;
+  // Volume input
+  slides.forEach((slide) => {
+    const audio = slide.querySelector("audio");
+    const volumeInp = slide.querySelector(".volumeInp");
+    if (volumeInp) {
+      volumeInp.addEventListener("input", function () {
+        audio.volume = volumeInp.value;
+      });
+    }
   });
 
-  // Update time range while audio plays
-  function updateTimeSlider() {
-    const audio = getCurrentAudio();
-    timeInp.max = audio.duration || 100;
-    timeInp.value = audio.currentTime;
-  }
+  // Time scrubber input
+  slides.forEach((slide) => {
+    const audio = slide.querySelector("audio");
+    const timeInp = slide.querySelector(".timeInp");
+    if (timeInp) {
+      timeInp.addEventListener("input", function () {
+        audio.currentTime = timeInp.value;
+      });
+    }
 
-  setInterval(updateTimeSlider, 500);
-
-  // Speed
-  speed.addEventListener("change", function () {
-    getCurrentAudio().playbackRate = speed.value;
+    // Update time input while audio is playing
+    audio.addEventListener("timeupdate", function () {
+      if (timeInp) {
+        timeInp.max = audio.duration || 100;
+        timeInp.value = audio.currentTime;
+      }
+    });
   });
 
-  // Navigation
+  // Speed control
+  slides.forEach((slide) => {
+    const audio = slide.querySelector("audio");
+    const speedSelect = slide.querySelector(".speedSelect");
+    if (speedSelect) {
+      speedSelect.addEventListener("change", function () {
+        audio.playbackRate = parseFloat(speedSelect.value);
+      });
+    }
+  });
+
+  // Slide navigation
   previous.addEventListener("click", function () {
     slides[currentIndex].classList.remove("main");
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
@@ -71,4 +123,3 @@ $(document).ready(function () {
     slides[currentIndex].classList.add("main");
   });
 });
-</script>

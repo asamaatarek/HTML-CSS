@@ -1,120 +1,135 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Slider</title>
-        <link rel="stylesheet" href="style.css">
-        </head>
-    </head>
-    <body>
-        <section class="slider">
-            <section class="slide">
-                <audio src="media/crunching-leaves-262278.mp3" class="sound" controls> </audio>
-                <div id="btn" class="sound">
-                    <button onclick="playAud()">Play</button>
-                    <button onclick="pauseAud()">Pause</button>
-                    <button onclick="stopAud()">Stop</button>
-                    <button onclick="muteAud()">Mute</button>
-                </div>
-                <div id="volume" class="sound">
-                    <span>volume :</span> 
-                    <input type="range" name="" id="volumeInp" min="0" max="1" step=".1" />
-                </div>
-                <div id="time" class="sound">
-                    <span>time :</span> 
-                    <input type="range" name="" id="timeInp" min="0" step="1" />
-                </div>
-                <div id="speed" class="sound">
-                    <span>speed</span> 
-                    <select name="" id="speedSelect">
-                        <option value="0.5">0.5</option>
-                        <option value="1">1</option>
-                        <option value="1.5">1.5</option>
-                        <option value="2">2</option>
-                     </select>
-                </div>
-            </section>
-            <section class="slide">
-                <audio src="media/soft-wind-leaves-316393.mp3" class="sound" controls> </audio>
-                <div id="btn" class="sound">
-                    <button onclick="playAud()">Play</button>
-                    <button onclick="pauseAud()">Pause</button>
-                    <button onclick="stopAud()">Stop</button>
-                    <button onclick="muteAud()">Mute</button>
-                </div>
-                <div id="volume" class="sound">
-                    <span>volume :</span> 
-                    <input type="range" name="" id="volumeInp" min="0" max="1" step=".1" />
-                </div>
-                <div id="time" class="sound">
-                    <span>time :</span> 
-                    <input type="range" name="" id="timeInp" min="0" step="1" />
-                </div>
-                <div id="speed" class="sound">
-                    <span>speed</span> 
-                    <select name="" id="speedSelect">
-                        <option value="0.5">0.5</option>
-                        <option value="1">1</option>
-                        <option value="1.5">1.5</option>
-                        <option value="2">2</option>
-                     </select>
-                </div>
-            </section>
-            <section class="slide">
-                <audio src="media/walking-on-crunchy-leaves-139033.mp3" class="sound" controls> </audio>
-                <div id="btn" class="sound">
-                    <button onclick="playAud()">Play</button>
-                    <button onclick="pauseAud()">Pause</button>
-                    <button onclick="stopAud()">Stop</button>
-                    <button onclick="muteAud()">Mute</button>
-                </div>
-                <div id="volume" class="sound">
-                    <span>volume :</span> 
-                    <input type="range" name="" id="volumeInp" min="0" max="1" step=".1" />
-                </div>
-                <div id="time" class="sound">
-                    <span>time :</span> 
-                    <input type="range" name="" id="timeInp" min="0" step="1" />
-                </div>
-                <div id="speed" class="sound">
-                    <span>speed</span> 
-                    <select name="" id="speedSelect">
-                        <option value="0.5">0.5</option>
-                        <option value="1">1</option>
-                        <option value="1.5">1.5</option>
-                        <option value="2">2</option>
-                     </select>
-                </div>
-            </section>
-            <section class="slide">
-                <span>1</span>
-                <audio src="media/walking-on-leaves-260279.mp3" class="sound main"> </audio>
-                <div id="btn" class="sound main">
-                    <button onclick="playAud()">Play</button>
-                    <button onclick="pauseAud()">Pause</button>
-                    <button onclick="stopAud()">Stop</button>
-                    <button onclick="muteAud()">Mute</button>
-                </div>
-                <div id="volume" class="sound main">
-                    <span>volume :</span> 
-                    <input type="range" name="" id="volumeInp" min="0" max="1" step=".1" />
-                </div>
-                <div id="time" class="sound main">
-                    <span>time :</span> 
-                    <input type="range" name="" id="timeInp" min="0" step="1" />
-                </div>
-                <div id="speed" class="sound main">
-                    <span>speed</span> 
-                    <select name="" id="speedSelect">
-                        <option value="0.5">0.5</option>
-                        <option value="1">1</option>
-                        <option value="1.5">1.5</option>
-                        <option value="2">2</option>
-                     </select>
-                </div>
-            </section>
-            <span class="nav prev">&#10094;</span>
-            <span class="nav next">&#10095;</span>
-        </section>
-        <script src="main.js"></script>
-    </body>
+<head>
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="slide main">
+        <audio class="sound" src="media/crunching-leaves-262278.mp3"></audio>
+        <span class="text">Audio One</span>
+        <div class="btns sound">
+          <button class="playBtn">Play</button>
+          <button class="pauseBtn">Pause</button>
+          <button class="stopBtn">Stop</button>
+          <button class="muteBtn">Mute</button>
+        </div>
+      
+        <div class="volume sound">
+          <span>volume :</span>
+          <input type="range" class="volumeInp" min="0" max="1" step="0.1" />
+        </div>
+      
+        <div class="time sound">
+          <span>time :</span>
+          <input type="range" class="timeInp" min="0" step="1" />
+        </div>
+      
+        <div class="speed sound">
+          <span>speed</span>
+          <select class="speedSelect">
+            <option value="0.5">0.5</option>
+            <option value="1" selected>1</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+      </section>
+      <section class="slide ">
+        <audio class="sound" src="media/soft-wind-leaves-316393.mp3"></audio>
+        <span class="text">Audio Two</span>
+        <div class="btns sound">
+          <button class="playBtn">Play</button>
+          <button class="pauseBtn">Pause</button>
+          <button class="stopBtn">Stop</button>
+          <button class="muteBtn">Mute</button>
+        </div>
+      
+        <div class="volume sound">
+          <span>volume :</span>
+          <input type="range" class="volumeInp" min="0" max="1" step="0.1" />
+        </div>
+      
+        <div class="time sound">
+          <span>time :</span>
+          <input type="range" class="timeInp" min="0" step="1" />
+        </div>
+      
+        <div class="speed sound">
+          <span>speed</span>
+          <select class="speedSelect">
+            <option value="0.5">0.5</option>
+            <option value="1" selected>1</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+      </section>
+      <section class="slide">
+        <audio class="sound" src="media/walking-on-crunchy-leaves-139033.mp3"></audio>
+        <span class="text">Audio Three</span>
+        <div class="btns sound">
+          <button class="playBtn">Play</button>
+          <button class="pauseBtn">Pause</button>
+          <button class="stopBtn">Stop</button>
+          <button class="muteBtn">Mute</button>
+        </div>
+      
+        <div class="volume sound">
+          <span>volume :</span>
+          <input type="range" class="volumeInp" min="0" max="1" step="0.1" />
+        </div>
+      
+        <div class="time sound">
+          <span>time :</span>
+          <input type="range" class="timeInp" min="0" step="1" />
+        </div>
+      
+        <div class="speed sound">
+          <span>speed</span>
+          <select class="speedSelect">
+            <option value="0.5">0.5</option>
+            <option value="1" selected>1</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+      </section>
+      <section class="slide">
+        <audio class="sound" src="media/walking-on-leaves-260279.mp3"></audio>
+        <span class="text">Audio Four</span>
+        <div class="btns sound">
+          <button class="playBtn">Play</button>
+          <button class="pauseBtn">Pause</button>
+          <button class="stopBtn">Stop</button>
+          <button class="muteBtn">Mute</button>
+        </div>
+      
+        <div class="volume sound">
+          <span>volume :</span>
+          <input type="range" class="volumeInp" min="0" max="1" step="0.1" />
+        </div>
+      
+        <div class="time sound">
+          <span>time :</span>
+          <input type="range" class="timeInp" min="0" step="1" />
+        </div>
+      
+        <div class="speed sound">
+          <span>speed</span>
+          <select class="speedSelect">
+            <option value="0.5">0.5</option>
+            <option value="1" selected>1</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+    </section>
+    <section class="nav">
+        <span class="nav prev">&#10094;</span>
+        <span class="nav next">&#10095;</span>
+    </section>
+      <script src="main.js"></script>
+      
+</body>
 </html>
