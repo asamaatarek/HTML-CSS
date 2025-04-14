@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return getCurrentSlide().querySelector(".speedSelect");
   }
 
-  // Basic controls
+  // controls
   window.playAud = function () {
     getCurrentAudio().play();
   };
@@ -45,32 +45,36 @@ document.addEventListener("DOMContentLoaded", function () {
     audio.muted = !audio.muted;
   };
 
-  // Attach button listeners to each slide
-  slides.forEach((slide, index) => {
+  // Attach button
+  slides.forEach(function(slide, index) {
     const playBtn = slide.querySelector(".playBtn");
     const pauseBtn = slide.querySelector(".pauseBtn");
     const stopBtn = slide.querySelector(".stopBtn");
     const muteBtn = slide.querySelector(".muteBtn");
 
     playBtn.addEventListener("click", function () {
-      if (index === currentIndex) playAud();
+      if (index === currentIndex) 
+        playAud();
     });
 
     pauseBtn.addEventListener("click", function () {
-      if (index === currentIndex) pauseAud();
+      if (index === currentIndex) 
+        pauseAud();
     });
 
     stopBtn.addEventListener("click", function () {
-      if (index === currentIndex) stopAud();
+      if (index === currentIndex) 
+        stopAud();
     });
 
     muteBtn.addEventListener("click", function () {
-      if (index === currentIndex) muteAud();
+      if (index === currentIndex) 
+        muteAud();
     });
   });
 
-  // Volume input
-  slides.forEach((slide) => {
+  // Volume 
+  slides.forEach(function(slide, index) {
     const audio = slide.querySelector("audio");
     const volumeInp = slide.querySelector(".volumeInp");
     if (volumeInp) {
@@ -80,8 +84,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Time scrubber input
-  slides.forEach((slide) => {
+  // Time 
+  slides.forEach(function(slide, index) {
     const audio = slide.querySelector("audio");
     const timeInp = slide.querySelector(".timeInp");
     if (timeInp) {
@@ -90,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    // Update time input while audio is playing
+    // Update time during playing of the audio 
     audio.addEventListener("timeupdate", function () {
       if (timeInp) {
         timeInp.max = audio.duration || 100;
@@ -99,18 +103,20 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Speed control
-  slides.forEach((slide) => {
+  // Speed
+  slides.forEach(function(slide, index) {
     const audio = slide.querySelector("audio");
     const speedSelect = slide.querySelector(".speedSelect");
+
     if (speedSelect) {
       speedSelect.addEventListener("change", function () {
         audio.playbackRate = parseFloat(speedSelect.value);
       });
     }
+   // console.log(index + ": slide processed");
   });
 
-  // Slide navigation
+  //navigation
   previous.addEventListener("click", function () {
     slides[currentIndex].classList.remove("main");
     currentIndex = (currentIndex - 1 + slides.length) % slides.length;
