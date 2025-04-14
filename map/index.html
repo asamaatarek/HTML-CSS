@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>map</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="choose">
-            <span>Choose a Country</span>
-            <br>
-            <select class="CountrySelect">
-              <option value="Canda">Canda</option>
-              <option value="Egypt" selected>Egypt</option>
-              <option value="Spain">Spain</option>
-              <option value="Georgia">Georgia</option>
-            </select>
-          </div>
-          <script src="map.js"></script>
-          <script src="main.js"></script>
-    </body>
+<head>
+  <title>Map</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="choose">
+    <span>Choose a Country</span><br>
+    <select id="country-select">
+      <option value="Canada">Canada</option>
+      <option value="Egypt" selected>Egypt</option>
+      <option value="Spain">Spain</option>
+      <option value="Georgia">Georgia</option>
+    </select>
+  </div>
+  <div id="map"></div>
+  <script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+  defer>
+  </script>
+  <script src="map.js"></script>
+</body>
 </html>

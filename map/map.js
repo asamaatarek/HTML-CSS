@@ -1,30 +1,35 @@
-navigator.geolocation.getCurrentPosition(success, error)
+function getPosition(countryName) {
+  const request = new XMLHttpRequest();
+  request.open("GET", `https://nominatim.openstreetmap.org/search?format=json&q=${countryName}`);
+  request.send();
 
-var lon , lat ;
-
-function success(pos){
- lat =  pos.coords.latitude ;
- lon =  pos.coords.longitude;
-
- initMap(lat , lon);
-  
+  request.onload = function () {
+      const data = JSON.parse(request.response);
+      
+      const lat = parseFloat(data[0].lat);
+      const lon = parseFloat(data[0].lon);
+      console.log("Coordinates:", lat, lon);
+      showMap(lat, lon);
+  };
 }
 
-function error(e){alert(e.message)}
-
-
-function initMap(myLat , myLon) {
-  const myLatLng = { lat: myLat, lng: myLon };
-  const map = new google.maps.Map(document.getElementById("map"), {
+function showMap(lat, lon) {
+  const mapOptions = {
+    center: { lat: lat, lng: lon },
     zoom: 4,
-    center: myLatLng,
-  });
-
+  };
+  const map = new google.maps.Map(document.getElementById("map"), mapOptions);
   new google.maps.Marker({
-    position: myLatLng,
-    map,
-    title: "Hello World!",
+    position: { lat: lat, lng: lon },
+    map: map,
+    title: "Selected Country",
   });
 }
 
-window.initMap = initMap;
+window.initMap = function () {
+  const select = document.getElementById("country-select");
+  select.addEventListener("change", function () {
+    getPosition(this.value);
+  });
+  getPosition("Egypt");
+};
