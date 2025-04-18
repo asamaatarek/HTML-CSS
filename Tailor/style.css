@@ -32,6 +32,54 @@ h1, h2 , h3 , h4 , h5 , h6{
   display: inline-block;
 }
 
+
+.preloader {
+  background-color: #f7f7f7;
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+
+  .preloader__circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    box-shadow: 0 1px 5px 0 rgba(35, 181, 185, 0.15);
+
+    border: 1px solid #fff;
+    border-top-color: #be9278;
+    animation: spin 2s infinite;
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    /* margin: -50px; */
+
+  }
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+
+}
+
+
 /* ====== nesting ========= */
 
 .header {
@@ -78,7 +126,27 @@ h1, h2 , h3 , h4 , h5 , h6{
 
 
 }
+.fixed-bar {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0 10px 15px rgba(25, 25, 25, 0.1);
+  animation: fadeInDown 300ms;
+}
 
+@keyframes fadeInDown {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+
+  }
+
+}
 
 .hero{
   height: 850px;
@@ -94,6 +162,12 @@ h1, h2 , h3 , h4 , h5 , h6{
     left: 12%;
     color: #fff;
     width: 40%;
+
+    img {
+      animation: spin 20s infinite linear;
+
+    }
+
 
     h1{
       font-size: 76px;
@@ -139,8 +213,20 @@ h1, h2 , h3 , h4 , h5 , h6{
 
     .offer__img{
       padding: 40px;
-      img{
-        width: 100%;
+      .img__container {
+        background-color: lightblue;
+        height: 390px;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+        }
+
+
+        img {
+          transition: transform .7s;
+
+        }
       }
     }
 
@@ -165,7 +251,8 @@ h1, h2 , h3 , h4 , h5 , h6{
 
       h3{
         font-size:30px;
-        font-weight:600
+        font-weight:600;
+        transition: all .7s;
 
       }
       p{
@@ -176,6 +263,39 @@ h1, h2 , h3 , h4 , h5 , h6{
       }
     }
   }
+
+.offer:hover {
+  span {
+
+    color: #c6a16e;
+    border: 1px solid #c6a16e;
+    background-color: transparent;
+  }
+
+  h3 {
+    color: #c6a16e;
+  }
+
+  img {
+    transform: scale(1.1);
+  }
+}
+}
+
+@keyframes fadeInUp {
+
+from {
+  transform: translateY(600px);
+  opacity: 0;
+
+}
+
+to {
+  transform: translateY(0px);
+  opacity: 1;
+
+}
+
 }
 
 .about{
@@ -233,6 +353,31 @@ h1, h2 , h3 , h4 , h5 , h6{
         margin: 25px 0px;
       }
     }
+  }
+}
+.form {
+  width: 80%;
+  margin: 100px auto;
+
+  input {
+    display: block;
+    padding: 20px 60px;
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+
+  button {
+    padding: 20px 40px;
+    margin-bottom: 10px;
+  }
+}
+
+.media {
+  width: 80%;
+  margin: 100px auto;
+
+  button {
+    padding: 20px 40px;
   }
 }
 
@@ -508,5 +653,3 @@ padding: 10px 10px;
      padding: 40px auto;
    }
  }
-}
-}
