@@ -7,16 +7,18 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-      <!-- ===== Preloader ===== -->
+      <!--Preloader-->
     <div id="preloader">
         <div class="dot-loader">
           <span></span><span></span><span></span>
         </div>
       </div>
   
+      <!---nav--->
       <header class="main-header">
         <div class="header-sec">
           <div class="logo">
@@ -24,6 +26,24 @@
           </div>
           <nav class="nav-links">
             <a href="#" class="home">Home</a>
+            <div class="nav-item">
+              <a href="#" class="page">Pages </a>
+              <ul class="dropdown-list">
+                <li>- Home</li>
+                <li>- About</li>
+                <li>- Gallery</li>
+                <li>- Blog</li>
+                <li>- Blog details</li>
+                <li>- Contact</li>
+                <li>- Dropdown</li>
+              </ul>
+              <ul class="dropdown-list-second">
+                <li>- Dropdown Item</li>
+                <li>- Dropdown Item</li>
+                <li>- Dropdown Item</li>
+                <li>- Dropdown Item</li>
+              </ul>
+            </div>
             <a href="#">About</a>
             <a href="#" class="gal">Gallery</a>
             <a href="#">Blog</a>
@@ -34,64 +54,75 @@
           </nav>
         </div>
       </header>
-      <!--- Hero -->
+      <div id="floatingCircle">
+        <i class="fa fa-thumbtack"></i>
+      </div>
+      
+            <!-- Hero -->
       <section class="hero">
         <div class="slide active" data-animation="top-down" style="background-image: url('images/1.jpg');">
           <div class="hero-content">
-            <h2>Hello <br> I'm Jackson</h2>
-            <p>I photograph very instinctively. I see how it is taken like that. I do not follow certain styles, philosophies or teachers.</p>
+            <h2>Hello <br><span id="name">I'm Jackson</span></h2>
+            <p>I photograph very instinctively. I see how it is taken like that. I do not<br> follow certain styles, philosophies or teachers.</p>
             <div class="hero-buttons">
               <a href="#" class="btn">Get A Quote</a>
               <a href="mailto:hello.alime@gmail.com" class="email">hello.alime@gmail.com</a>
             </div>
           </div>
         </div>
-      
+
         <div class="slide" data-animation="bottom-up" style="background-image: url('images/2.jpg');">
           <div class="hero-content">
-            <h2>Hello <br> I'm Alime</h2>
-            <p>I photograph very instinctively. I see how it is taken like that. I do not follow certain styles, philosophies or teachers.</p>
+            <h2>Hello <br><span id="name">I'm Alime</span></h2>
+            <p>I photograph very instinctively. I see how it is taken like that. I do not<br> follow certain styles, philosophies or teachers.</p>
             <div class="hero-buttons">
               <a href="#" class="btn">Discover More</a>
               <a href="mailto:contact@alime.com" class="email">contact@alime.com</a>
             </div>
           </div>
         </div>
-      
+
         <div class="nav-arrows">
           <div class="arrow prev">←</div>
           <div class="arrow next">→</div>
         </div>
       </section>
-      
-      
-    <!-- ===== Gallery Section ===== -->
+      <!--Space-->
+      <section>
+        <div id="sep">
+        </div>
+      </section>
+    <!--Gallery Section-->
     <section class="gallery-section">
-        <h2 class="section-title">Our Gallery</h2>
-        <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="images/1.jpg" alt="Gallery 1" onclick="openLightbox(this)">
+      <div class="first-sec">
+        <div class="second-sec">
+          <div class="label-sec">
+            <button class="gallery-btn btn-active">All</button>
+            <button class="gallery-btn">Human</button>
+            <button class="gallery-btn">Nature</button>
+            <button class="gallery-btn">Country</button>
+            <button class="gallery-btn">Video</button>
+          </div>
+          <div class="gallery-grid">
+              <div class="gallery-item"><img src="images/3.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+              <div class="gallery-item"><img src="images/4.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+              <div class="gallery-item "><img src="images/5.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+              <div class="gallery-item"><img src="images/6.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+              
+              <div class="gallery-item"><img src="images/7.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+              <div class="gallery-item larrge"><img src="images/9.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+              <div class="gallery-item "><img src="images/8.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+              <div class="gallery-item "><img src="images/10.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+             
+              <div class="gallery-item large"><img src="images/37.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+              <div class="gallery-item gr"><img src="images/5.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+              <div class="gallery-item wide-span"><img src="images/36.jpg" alt="Gallery" onclick="openLightbox(this)"><div class="hover-icon">+</div></div>
+            </div>
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="images/2.jpg" alt="Gallery 2" onclick="openLightbox(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="images/3.jpg" alt="Gallery 3" onclick="openLightbox(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="images/4.jpg" alt="Gallery 4" onclick="openLightbox(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="images/5.jpg" alt="Gallery 5" onclick="openLightbox(this)">
-        </div>
-        <div class="gallery-item">
-            <img src="images/6.jpg" alt="Gallery 6" onclick="openLightbox(this)">
-        </div>
-        </div>
+      </div>     
     </section>
-  
- 
-  <!-- ===== Follow Section ==== -->
+  <!--Follow Section-->
    <section class="follow-section">
       <div id="follow">
         <div class="follow-head">
@@ -121,7 +152,7 @@
         </div>
       </div>
    </section>
-  <!-- ===== Footer Section ===== -->
+  <!--Footer Sectiom-->
 <footer class="main-footer">
     <div class="footer-container">
         <div class="footer-center">
